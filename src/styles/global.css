@@ -1,0 +1,69 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-dark: #000000;
+  --text-primary: #000000;
+  --text-inverse: #ffffff;
+  --text-muted: rgba(0, 0, 0, 0.55);
+  --text-subtle: rgba(0, 0, 0, 0.35);
+  
+  --pill-bg: #F4F4F6;
+  --pill-bg-hover: #EBEBEF;
+  --border-light: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.35);
+  --border-focus: #000000;
+
+  --ease-custom: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  --nav-height-mobile: 60px;
+  --nav-height-desktop: 72px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

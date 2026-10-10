@@ -1,0 +1,35 @@
+.icon-circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: transform 0.2s var(--ease-custom), background-color 0.2s var(--ease-custom);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .icon-circle-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.icon-circle-btn.variant-white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.icon-circle-btn.variant-black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.icon-circle-btn:hover {
+  transform: scale(1.04);
+}
+
+.icon-circle-btn:active {
+  transform: scale(0.96);
+}

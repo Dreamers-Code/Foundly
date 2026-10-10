@@ -1,0 +1,42 @@
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-custom), background-color 0.2s var(--ease-custom), border-color 0.2s var(--ease-custom), opacity 0.2s var(--ease-custom);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-variant-black {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.btn-variant-black:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-variant-outline {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.btn-variant-outline:hover {
+  border-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.03);
+  transform: translateY(-1px);
+}
+
+.btn-pill:active {
+  transform: translateY(0) scale(0.98);
+}

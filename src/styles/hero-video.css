@@ -1,0 +1,110 @@
+.hero-video-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* ── Wrapper: mobile 80%×80%, desktop full ── */
+.hero-video-wrapper {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+  transition: width 0.6s var(--ease-custom), height 0.6s var(--ease-custom),
+              border-radius 0.6s var(--ease-custom);
+}
+
+@media (min-width: 768px) {
+  .hero-video-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ── SVG Fallback Backdrop ── */
+.hand-theme-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #f7f8fa;
+  z-index: 1;
+  transition: opacity 0.8s ease;
+}
+
+/* Fade out backdrop once video plays */
+.hand-theme-backdrop.video-active {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radial-light-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, #ffffff 0%, #eef0f4 100%);
+  z-index: 0;
+}
+
+.dot-grid-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.hand-illustration-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* ── Primary Video element ── */
+.hero-video-element {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+/* Fade video in once it can play */
+.hero-video-element.is-ready {
+  opacity: 1;
+  z-index: 3;
+}
+
+/* ── Pulse rings on center node ── */
+.pulse-ring-outer {
+  animation: ringPulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transform-origin: 600px 340px;
+}
+.pulse-ring-mid {
+  animation: ringPulse 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite 0.8s;
+  transform-origin: 600px 340px;
+}
+
+@keyframes ringPulse {
+  0%   { transform: scale(0.92); opacity: 0.6; }
+  60%  { transform: scale(1.35); opacity: 0;   }
+  100% { transform: scale(1.35); opacity: 0;   }
+}

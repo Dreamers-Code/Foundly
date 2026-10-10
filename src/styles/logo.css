@@ -1,0 +1,34 @@
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.logo-svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.brand-text {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .brand-text {
+    display: inline-block;
+  }
+}
+
+.brand-text.visible-mobile {
+  display: inline-block;
+}
